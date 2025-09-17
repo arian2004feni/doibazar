@@ -34,7 +34,7 @@ const SingleProduct = ({ item }) => {
       <div className="flex justify-between items-center">
         {/* Price & Weight/Cal */}
       <div className="flex flex-col justify-center">
-        <p className="text-base font-bold text-gray-900">৳{price.toFixed(2)}</p>
+        <p className="text-base font-bold text-gray-900">{price} টাকা</p>
         <p className="text-sm text-gray-500">{weight} / {cal}</p>
       </div>
 

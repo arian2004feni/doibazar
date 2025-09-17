@@ -9,7 +9,7 @@ const Products = () => {
     "category": "দই",
     "inStock": true,
     "title": "মিষ্টি দই (ক্লে পট)",
-    "price": 180,
+    "price": "১৮০",
     "weight": "500g",
     "cal": "150 kcal"
   },
@@ -19,7 +19,7 @@ const Products = () => {
     "category": "কেক",
     "inStock": true,
     "title": "চকলেট ফাজ কেক",
-    "price": 750,
+    "price": "৭৫০",
     "weight": "1kg",
     "cal": "150 kcal"
   },
@@ -29,7 +29,7 @@ const Products = () => {
     "category": "মিষ্টি",
     "inStock": false,
     "title": "রসগোল্লা (১২ পিস)",
-    "price": 300,
+    "price": "৩০০",
     "weight": "12 pcs",
     "cal": "150 kcal"
   },
@@ -39,7 +39,7 @@ const Products = () => {
     "category": "পেস্ট্রি",
     "inStock": false,
     "title": "ফ্রুট টার্ট",
-    "price": 150,
+    "price": "১৫০",
     "weight": "250g",
     "cal": "150 kcal"
   },
@@ -49,7 +49,7 @@ const Products = () => {
     "category": "কুকিজ",
     "inStock": false,
     "title": "বাটার কুকিজ",
-    "price": 220,
+    "price": "২২০",
     "weight": "400g",
     "cal": "150 kcal"
   },
@@ -59,7 +59,7 @@ const Products = () => {
     "category": "কেক",
     "inStock": true,
     "title": "ম্যাংগো চিজকেক",
-    "price": 550,
+    "price": "৫৫০",
     "weight": "500g",
     "cal": "150 kcal"
   }
