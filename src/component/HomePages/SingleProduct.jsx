@@ -27,7 +27,7 @@ const SingleProduct = ({ item }) => {
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover drop-shadow-xl drop-shadow-black/30 hover:drop-shadow-black/40"
         />
       </div>
 
