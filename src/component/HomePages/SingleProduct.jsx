@@ -1,13 +1,13 @@
 import { Info, CheckCircle, XCircle } from "lucide-react";
 
 const SingleProduct = ({ item }) => {
-  const { category, title, inStock, image, price, weightOrCal } = item;
+  const { category, title, inStock, image, price, weight, cal } = item;
 
   return (
-    <div className="w-full flex flex-col items-center justify-between gap-4 bg-white shadow rounded-xl p-4 hover:shadow-lg transition">
+    <div className="w-full flex flex-col justify-between gap-4 bg-white shadow border border-black/10 rounded-xl p-4 hover:shadow-lg transition bangl">
       
       {/* Details Column */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex flex-col">
         <p className="text-sm text-gray-500">{category}</p>
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         <div className="flex items-center gap-2 mt-1">
@@ -17,32 +17,34 @@ const SingleProduct = ({ item }) => {
             <XCircle className="w-4 h-4 text-red-500" />
           )}
           <span className={`text-sm ${inStock ? "text-green-600" : "text-red-600"}`}>
-            {inStock ? "In Stock" : "Out of Stock"}
+            {inStock ? "স্টকে আছে" : "স্টকে নেই"}
           </span>
         </div>
       </div>
 
       {/* Image */}
-      <div className="w-20 h-20 flex-shrink-0">
+      <div className="w-10/12 flex justify-center flex-shrink-0 mx-auto">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Price & Weight/Cal */}
-      <div className="text-right flex flex-col items-end justify-center">
-        <p className="text-base font-bold text-gray-900">${price.toFixed(2)}</p>
-        <p className="text-sm text-gray-500">{weightOrCal}</p>
+      <div className="flex justify-between items-center">
+        {/* Price & Weight/Cal */}
+      <div className="flex flex-col justify-center">
+        <p className="text-base font-bold text-gray-900">৳{price.toFixed(2)}</p>
+        <p className="text-sm text-gray-500">{weight} / {cal}</p>
       </div>
 
       {/* Details Button */}
       <button
-        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+        className="p-2 rounded-full size-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition"
       >
         <Info className="w-5 h-5 text-gray-600" />
       </button>
+      </div>
     </div>
   );
 };

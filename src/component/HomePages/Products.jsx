@@ -10,7 +10,8 @@ const Products = () => {
     "inStock": true,
     "title": "মিষ্টি দই (ক্লে পট)",
     "price": 180,
-    "weightOrCal": "500g"
+    "weight": "500g",
+    "cal": "150 kcal"
   },
   {
     "_id": "2",
@@ -19,7 +20,8 @@ const Products = () => {
     "inStock": true,
     "title": "চকলেট ফাজ কেক",
     "price": 750,
-    "weightOrCal": "1kg"
+    "weight": "1kg",
+    "cal": "150 kcal"
   },
   {
     "_id": "3",
@@ -28,7 +30,8 @@ const Products = () => {
     "inStock": false,
     "title": "রসগোল্লা (১২ পিস)",
     "price": 300,
-    "weightOrCal": "12 pcs"
+    "weight": "12 pcs",
+    "cal": "150 kcal"
   },
   {
     "_id": "4",
@@ -37,7 +40,8 @@ const Products = () => {
     "inStock": false,
     "title": "ফ্রুট টার্ট",
     "price": 150,
-    "weightOrCal": "250g"
+    "weight": "250g",
+    "cal": "150 kcal"
   },
   {
     "_id": "5",
@@ -46,7 +50,8 @@ const Products = () => {
     "inStock": false,
     "title": "বাটার কুকিজ",
     "price": 220,
-    "weightOrCal": "400g"
+    "weight": "400g",
+    "cal": "150 kcal"
   },
   {
     "_id": "6",
@@ -55,13 +60,14 @@ const Products = () => {
     "inStock": true,
     "title": "ম্যাংগো চিজকেক",
     "price": 550,
-    "weightOrCal": "500g"
+    "weight": "500g",
+    "cal": "150 kcal"
   }
 ];
   return (
     <section className='max-w-7xl mx-auto py-12 px-6'>
       <h2 className="text-3xl font-bold text-center my-8">Our Products</h2>
-      <div className="grid min-[400px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+      <div className="grid min-[400px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
         {items.map(item => <SingleProduct item={item}/>)}
       </div>
     </section>

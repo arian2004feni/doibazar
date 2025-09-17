@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="hero-content flex-col lg:flex-row-reverse gap-20">
         <img
           src="/hero.png"
-          className="max-w-lg rounded-lg drop-shadow-lg"
+          className="sm:max-w-lg rounded-lg drop-shadow-lg"
         />
         <div>
           <h1 className="text-3xl min-[450px]:text-4xl sm:text-5xl font-bold bangla">মিষ্টির আনন্দ মিস করবেন না। <br /> দই, মিষ্টি ও কেক এখন এক ক্লিকে হাতে!</h1>
