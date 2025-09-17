@@ -48,7 +48,7 @@ The goal is to bring premium yogurt products online with seamless browsing, orde
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/arian2004/doibazaar.git
+git clone https://github.com/arian2004feni/doibazaar.git
 cd doibazaar
 ```
 2️⃣ Install Dependencies
