@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { toBanglaNumber } from "../component/utils";
 
 const ProductDetails = () => {
   const product = {
@@ -107,7 +108,7 @@ const ProductDetails = () => {
           {/* Price Section */}
           <div className="flex items-end">
             <span className="text-3xl font-bold mr-2 leading-7">
-              {product.price} ৳
+              {toBanglaNumber(product.price)} ৳
             </span>
           </div>
 
@@ -115,7 +116,7 @@ const ProductDetails = () => {
           <p className="text-sm text-gray-600">
             {product.weight === 1000
               ? `${product.price} ৳ প্রতি কেজি`
-              : `প্রতি ${product.weight} গ্রাম ${product.price} টাকা`}
+              : `প্রতি ${toBanglaNumber(product.weight)} গ্রাম ${toBanglaNumber(product.price)} টাকা`}
           </p>
 
           {/* Delivery */}
@@ -129,33 +130,17 @@ const ProductDetails = () => {
             <span className="font-semibold">ব্র্যান্ড:</span> {product.brand}
           </p>
 
-          {/* Weight Picker */}
-          {/* <div className="flex items-center gap-4">
-            <span className="font-semibold">ওজন:</span>
-            <select
-              className="select select-bordered w-32"
-              value={selectedWeight}
-              onChange={(e) => setSelectedWeight(Number(e.target.value))}
-            >
-              {product.weightOptions.map((w, i) => (
-                <option key={i} value={w}>
-                  {w} {product.unit}
-                </option>
-              ))}
-            </select>
-          </div> */}
-
           {/* Quantity Selector */}
           <div className="flex items-center gap-4">
             <span className="font-semibold">পরিমাণ:</span>
-            <div className="flex items-center border rounded-full english">
+            <div className="flex items-center border border-amber-600 rounded-full english">
               <button
                 className="px-3 py-1 rounded-full cursor-pointer"
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
               >
                 -
               </button>
-              <p className="size-7 bg-warning flex items-center justify-center rounded-full">{quantity}</p>
+              <p className="size-7 bg-warning flex items-center justify-center rounded-full">{toBanglaNumber(quantity)}</p>
               <button
                 className="px-3 py-1 rounded-full cursor-pointer"
                 onClick={() => setQuantity((q) => Math.min(5, q + 1))}
