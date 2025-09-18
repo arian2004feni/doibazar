@@ -4,7 +4,7 @@ const SingleProduct = ({ item }) => {
   const { category, title, inStock, image, price, weight, cal } = item;
 
   return (
-    <div className="w-full flex flex-col justify-between gap-4 bg-white shadow border border-black/10 rounded-xl p-4 hover:shadow-lg transition bangl">
+    <div className="w-full flex flex-col justify-between gap-4 bg-white shadow border border-black/10 rounded-xl p-4 hover:shadow-lg transition bangla group">
       
       {/* Details Column */}
       <div className="flex flex-col">
@@ -27,7 +27,7 @@ const SingleProduct = ({ item }) => {
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover drop-shadow-xl drop-shadow-black/30 hover:drop-shadow-black/40"
+          className="w-full h-full object-cover drop-shadow-xl drop-shadow-black/30 group-hover:drop-shadow-black/45 transition-all duration-200"
         />
       </div>
 
