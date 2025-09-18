@@ -1,4 +1,6 @@
 import React from "react";
+import AuthModal from "../../app/AuthModal";
+import Auth from "../Auth/Auth";
 
 const Navbar = () => {
   return (<>
@@ -71,7 +73,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Auth />
       </div>
     </nav>
     <div className="h-16"></div>
