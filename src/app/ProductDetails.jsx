@@ -51,7 +51,7 @@ const ProductDetails = () => {
             <Link to={'/'}>Home</Link>
           </li>
           <li>
-            <Link to={`/${category}`}>{category}</Link>
+            <Link to={`/category/${category}`}>{category}</Link>
           </li>
           <li>{id}</li>
         </ul>

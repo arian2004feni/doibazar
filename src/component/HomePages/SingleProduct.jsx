@@ -9,10 +9,10 @@ const SingleProduct = ({ item }) => {
       {/* Details Column */}
       <div className="flex flex-col">
         <p className="text-sm text-gray-500">
-          <Link to={`/${category}`} className=" link-hover">{category}</Link>
+          <Link to={`category/${category}`} className=" link-hover">{category}</Link>
         </p>
         <h2 className="text-lg font-semibold text-gray-800">
-          <Link to={`/${category}/${_id}`} className="link-hover">
+          <Link to={`category/${category}/${_id}`} className="link-hover">
             {title}
           </Link>
         </h2>
@@ -32,7 +32,7 @@ const SingleProduct = ({ item }) => {
 
       {/* Image */}
       <Link
-        to={`/${category}/${_id}`}
+        to={`category/${category}/${_id}`}
         className="w-10/12 flex justify-center flex-shrink-0 mx-auto"
       >
         <img
@@ -53,7 +53,7 @@ const SingleProduct = ({ item }) => {
 
         {/* Details Button */}
         <Link
-          to={`/${category}/${_id}`}
+          to={`category/${category}/${_id}`}
           className="p-2 rounded-full size-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition"
         >
           <Info className="w-5 h-5 text-gray-600" />

@@ -3,6 +3,7 @@ import Home from "../app/Home";
 import RootLayout from "../layout/RootLayout";
 import ProductDetails from "../app/ProductDetails";
 import CategoryProducts from "../app/CategoryProducts";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -11,17 +12,17 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home
+        Component: Home,
       },
       {
-        path: ":category",
-        Component: CategoryProducts
+        path: "category/:category",
+        element: <PrivateRoute><CategoryProducts /></PrivateRoute>
       },
       {
-        path: ":category/:id",
-        Component: ProductDetails
-      }
-    ]
+        path: "category/:category/:id",
+        Component: ProductDetails,
+      },
+    ],
   },
 ]);
 
