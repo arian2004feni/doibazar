@@ -1,10 +1,11 @@
-// import { Link, useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { toBanglaNumber } from "../component/utils";
 
 const ProductDetails = () => {
+  const {category, id} = useParams();
   const product = {
     _id: "p1",
     title: "দই মিষ্টি",
@@ -44,12 +45,23 @@ const ProductDetails = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-4 bangla">
+      <div className="breadcrumbs text-sm">
+        <ul>
+          <li>
+            <Link to={'/'}>Home</Link>
+          </li>
+          <li>
+            <Link to={`/${category}`}>{category}</Link>
+          </li>
+          <li>{id}</li>
+        </ul>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* LEFT - Image Gallery */}
         <div className="relative">
           <div className="grid grid-cols-3 grid-rows-2 gap-2">
             {/* Main Big Image */}
-            <div className="col-span-3 row-span-2 w-full h-96 flex justify-center">
+            <div className="col-span-3 row-span-2 w-full sm:h-96 h-[350px] flex justify-center">
               <div className="h-8/12 mt-6">
                 <img
                   src={mainImage}
@@ -76,7 +88,7 @@ const ProductDetails = () => {
                     <div
                       key={idx}
                       onClick={() => setMainImage(img)}
-                      className={`size-20 bg-orange-50/50 p-1 border cursor-pointer flex items-center shadow-lg ${
+                      className={`size-20 md:size-16 lg:size-20 max-[450px]:size-16 max-[360px]:size-14 bg-orange-50/50 p-1 border cursor-pointer flex items-center shadow-lg ${
                         img === mainImage
                           ? "border-orange-400"
                           : "border-gray-200"
