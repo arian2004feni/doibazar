@@ -4,6 +4,8 @@ import RootLayout from "../layout/RootLayout";
 import ProductDetails from "../app/ProductDetails";
 import CategoryProducts from "../app/CategoryProducts";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../layout/Dashboard";
+import Profile from "../component/Dashboard/Profile";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +18,33 @@ const router = createBrowserRouter([
       },
       {
         path: "category/:category",
-        element: <PrivateRoute><CategoryProducts /></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <CategoryProducts />
+          </PrivateRoute>
+        ),
       },
       {
         path: "category/:category/:id",
         Component: ProductDetails,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },
