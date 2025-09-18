@@ -1,9 +1,11 @@
-import { Outlet } from 'react-router';
+import { Outlet } from "react-router";
+import Navbar from "../component/common/Navbar";
 
 const RootLayout = () => {
   return (
     <>
-     <Outlet /> 
+      <Navbar />
+      <Outlet />
     </>
   );
 };
