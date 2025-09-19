@@ -1,12 +1,10 @@
-import { useState } from "react";
 import GoogleLogin from "./GoogleLogin";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 
 export default function AuthModal() {
-  const [isLogin, setIsLogin] = useState(true);
-  const { signInUser, closeModal, isOpen, createUser } =
+  const { signInUser, closeModal, isOpen, createUser, setAuthLoading, isLogin, setIsLogin } =
     useAuth();
 
   const handleSubmit = (e) => {
@@ -17,6 +15,7 @@ export default function AuthModal() {
       const password = form.password.value;
       signInUser(email, password)
         .then(() => {
+          setAuthLoading(false);
           closeModal();
           Swal.fire({
             icon: "success",
@@ -26,6 +25,7 @@ export default function AuthModal() {
           });
         })
         .catch(() => {
+          setAuthLoading(false);
           Swal.fire({
             icon: "error",
             title: "Login Failed",
@@ -42,9 +42,11 @@ export default function AuthModal() {
           // console.log(res.user);
           updateProfile(user, {
             displayName: name,
-            photoURL: 'https://i.ibb.co.com/JX3zV4J/pngtree-vector-avatar-icon-png-image-889567-removebg-preview.png',
+            photoURL:
+              "https://i.ibb.co.com/JX3zV4J/pngtree-vector-avatar-icon-png-image-889567-removebg-preview.png",
           })
             .then(() => {
+              setAuthLoading(false);
               Swal.fire({
                 icon: "success",
                 title: "Registration Successful 🎉",
@@ -53,6 +55,7 @@ export default function AuthModal() {
               });
             })
             .catch(() => {
+              setAuthLoading(false);
               Swal.fire({
                 icon: "error",
                 title: "Profile Update Failed",
@@ -61,6 +64,7 @@ export default function AuthModal() {
             });
         })
         .catch(() => {
+          setAuthLoading(false);
           Swal.fire({
             icon: "error",
             title: "Registration Failed",
@@ -72,15 +76,6 @@ export default function AuthModal() {
 
   return (
     <div>
-      {/* Open Modal Button */}
-      {/* <button
-        className="btn bg-orange-500 hover:bg-orange-600 text-white"
-        onClick={openModal}
-      >
-        Login / Register
-      </button> */}
-
-      {/* Modal */}
       {isOpen && (
         <dialog className="modal modal-open">
           <div className="modal-box relative max-w-sm">

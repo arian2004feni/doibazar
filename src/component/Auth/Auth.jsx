@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 
 const Auth = () => {
-  const { user, signOutUser, openModal } = useAuth();
+  const { user, signOutUser, openModal, setAuthLoading } = useAuth();
   const handleLogOut = () => {
     Swal.fire({
       title: "Do you really want to log out?",
@@ -17,6 +17,7 @@ const Auth = () => {
       if (result.isConfirmed) {
         signOutUser()
           .then(() => {
+            setAuthLoading(false)
             Swal.fire({
               icon: "success",
               title: "Logged out successfully!",
@@ -24,8 +25,8 @@ const Auth = () => {
               timer: 1000,
             });
           })
-          .catch((error) => {
-            console.error("Error signing out:", error);
+          .catch(() => {
+            setAuthLoading(false)
             Swal.fire({
               icon: "error",
               title: "Oops...",

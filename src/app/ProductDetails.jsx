@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { toBanglaNumber } from "../component/utils";
 
 const ProductDetails = () => {
-  const {category, id} = useParams();
+  const {category, id } = useParams();
   const product = {
     _id: "p1",
     title: "দই মিষ্টি",
@@ -48,7 +48,7 @@ const ProductDetails = () => {
       <div className="breadcrumbs text-sm">
         <ul>
           <li>
-            <Link to={'/'}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <Link to={`/category/${category}`}>{category}</Link>
@@ -128,7 +128,9 @@ const ProductDetails = () => {
           <p className="text-sm text-gray-600">
             {product.weight === 1000
               ? `${product.price} ৳ প্রতি কেজি`
-              : `প্রতি ${toBanglaNumber(product.weight)} গ্রাম ${toBanglaNumber(product.price)} টাকা`}
+              : `প্রতি ${toBanglaNumber(product.weight)} গ্রাম ${toBanglaNumber(
+                  product.price
+                )} টাকা`}
           </p>
 
           {/* Delivery */}
@@ -152,7 +154,9 @@ const ProductDetails = () => {
               >
                 -
               </button>
-              <p className="size-7 bg-warning flex items-center justify-center rounded-full">{toBanglaNumber(quantity)}</p>
+              <p className="size-7 bg-warning flex items-center justify-center rounded-full">
+                {toBanglaNumber(quantity)}
+              </p>
               <button
                 className="px-3 py-1 rounded-full cursor-pointer"
                 onClick={() => setQuantity((q) => Math.min(5, q + 1))}

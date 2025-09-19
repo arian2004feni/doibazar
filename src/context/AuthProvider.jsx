@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -14,36 +13,42 @@ import AuthModal from "../app/AuthModal";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const closeModal = () => setIsOpen(false);
-  const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    setIsOpen(true);
+    setIsLogin(true);
+  };
 
   const provider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
+    setAuthLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signInUser = (email, password) => {
+    setAuthLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googleSignInUser = () => {
+    setAuthLoading(true);
     return signInWithPopup(auth, provider);
   };
 
   const signOutUser = () => {
+    setAuthLoading(true);
     return signOut(auth);
-  };
-
-  const forgetPassword = (email) => {
-    return sendPasswordResetEmail(auth, email);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("User Info in useEffect", currentUser);
+      setAuthLoading(false);
       setUser(currentUser);
     });
     return () => {
@@ -53,14 +58,17 @@ const AuthProvider = ({ children }) => {
 
   const userInfo = {
     user,
+    authLoading,
+    setAuthLoading,
     createUser,
     signInUser,
     googleSignInUser,
     signOutUser,
-    forgetPassword,
     closeModal,
     openModal,
     isOpen,
+    isLogin,
+    setIsLogin
   };
 
   return (

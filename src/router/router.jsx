@@ -6,6 +6,7 @@ import CategoryProducts from "../app/CategoryProducts";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import Profile from "../component/Dashboard/Profile";
+import CreateProductPage from "../component/Dashboard/CreateProductPage";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +41,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "profile",
-        element: (
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        ),
+        Component: Profile
+      },
+      {
+        path: "create-product",
+        Component: CreateProductPage,
       },
     ],
   },
