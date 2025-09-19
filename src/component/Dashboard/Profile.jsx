@@ -12,13 +12,13 @@ export default function Profile() {
   // });
 
   const userData = {
-    firstName: 'Arian',
-    lastName: "Asraf",
+    firstName: user?.email === "admin@doibazar.com" ? "admin" : "user",
+    lastName: user?.email === "admin@doibazar.com" ? "admin" : "user",
     email: user?.email,
-    photo: user?.photoUrl,
+    photo: user?.photoUrl || 'https://i.ibb.co.com/JX3zV4J/pngtree-vector-avatar-icon-png-image-889567-removebg-preview.png',
     phoneNumber: '01654789654',
     dateOfBirth: '17/17/1717',
-    role: 'user',
+    role: user?.email === "admin@doibazar.com" ? "admin" : "user",
   };
   return (
     <div className="p-6 max-w-4xl mx-auto bg-base-200 rounded-2xl shadow-md my-12">
@@ -53,7 +53,7 @@ export default function Profile() {
         <p>
           <span className="font-semibold">Role:</span>{" "}
           <span className="badge badge-accent">{`${
-            (userData.role === "user" && "Tourist") ||
+            (userData.role === "user" && "User") ||
             (userData.role === "admin" && "Admin") ||
             "N/A"
           }`}</span>

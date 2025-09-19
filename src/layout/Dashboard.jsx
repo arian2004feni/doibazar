@@ -1,9 +1,11 @@
 import { RiUserSettingsLine } from "react-icons/ri";
-import { NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import DashboardSideNav from "../component/common/DashboardSideNav";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
-  const userRole = {role: 'user'};
+  const {user} = useAuth();
+  const userRole = { role: user?.email === "admin@doibazar.com" ? "admin" : "user" };
 
   // const { data: userRole = {} } = useQuery({
   //   queryKey: ["user-role", emailId?.email],
@@ -55,15 +57,14 @@ const Dashboard = () => {
         ></label>
         <ul className="menu menu-lg gap-3 bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar Logo */}
-          <div className="mb-5 flex justify-between items-center">
-            <h2 className="text-3xl">Doighor</h2>
+          <div className="mb-3">
+            <Link to="/" className="text-3xl bangla">
+              দইবাজার
+            </Link>
           </div>
           {/* Sidebar Navigation */}
           <li>
-            <NavLink
-              className="dashboard"
-              to='/dashboard/profile'
-            >
+            <NavLink className="dashboard" to="/dashboard/profile">
               <RiUserSettingsLine className="mr-2" />
               Manage Profile
             </NavLink>
@@ -74,7 +75,7 @@ const Dashboard = () => {
             <div className="divider"></div>
             Logged in as{" "}
             <span className="font-bold">{`${
-              (userRole?.role === "user" && "Customer") ||
+              (userRole?.role === "user" && "User") ||
               (userRole?.role === "admin" && "Admin") ||
               "N/A"
             }`}</span>

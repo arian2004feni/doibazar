@@ -162,7 +162,6 @@ export default function CreateProductPage() {
       }
 
       const payload = {
-        ...values,
         title: values.title,
         category: values.category,
         shortDescription: values.shortDescription,
@@ -233,35 +232,34 @@ export default function CreateProductPage() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Title */}
         <div className="grid grid-cols-2 gap-2">
-
-        <div>
-          <label className="label">
-            <span className="label-text">এবং বড় টাইটেল (বাংলা)</span>
-          </label>
-          <input
-            {...register("title", { required: "শিরোনাম অবশ্যই লাগবে" })}
-            placeholder="উদাহরণ: মিষ্টি দই (ক্লে পট)"
-            className="input input-bordered w-full"
-            disabled={loading}
-          />
-          {errors.title && (
-            <p className="text-red-500 mt-1">{errors.title.message}</p>
-          )}
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text">ক্যাটাগরি</span>
-          </label>
-          <input
-            {...register("category", { required: "ক্যাটাগরি অবশ্যই লাগবে" })}
-            placeholder="উদাহরণ: দই"
-            className="input input-bordered w-full"
-            disabled={loading}
-          />
-          {errors.category && (
-            <p className="text-red-500 mt-1">{errors.category.message}</p>
-          )}
-        </div>
+          <div>
+            <label className="label">
+              <span className="label-text">এবং বড় টাইটেল (বাংলা)</span>
+            </label>
+            <input
+              {...register("title", { required: "শিরোনাম অবশ্যই লাগবে" })}
+              placeholder="উদাহরণ: মিষ্টি দই (ক্লে পট)"
+              className="input input-bordered w-full"
+              disabled={loading}
+            />
+            {errors.title && (
+              <p className="text-red-500 mt-1">{errors.title.message}</p>
+            )}
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">ক্যাটাগরি</span>
+            </label>
+            <input
+              {...register("category", { required: "ক্যাটাগরি অবশ্যই লাগবে" })}
+              placeholder="উদাহরণ: দই"
+              className="input input-bordered w-full"
+              disabled={loading}
+            />
+            {errors.category && (
+              <p className="text-red-500 mt-1">{errors.category.message}</p>
+            )}
+          </div>
         </div>
 
         {/* Images */}

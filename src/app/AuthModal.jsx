@@ -47,6 +47,7 @@ export default function AuthModal() {
           })
             .then(() => {
               setAuthLoading(false);
+              closeModal();
               Swal.fire({
                 icon: "success",
                 title: "Registration Successful 🎉",
@@ -56,6 +57,7 @@ export default function AuthModal() {
             })
             .catch(() => {
               setAuthLoading(false);
+              closeModal();
               Swal.fire({
                 icon: "error",
                 title: "Profile Update Failed",
@@ -65,6 +67,7 @@ export default function AuthModal() {
         })
         .catch(() => {
           setAuthLoading(false);
+          closeModal();
           Swal.fire({
             icon: "error",
             title: "Registration Failed",

@@ -47,8 +47,8 @@ const Auth = () => {
 
   if (user) {
     return (
-      <div className="flex mt-4 md:m-0 justify-center items-center">
-        <Link to="dashboard/profile" className="w-11 border rounded-full">
+      <div className="flex mt-4 md:m-0 justify-center items-center gap-2">
+        <Link to="dashboard/profile" className="w-11 border rounded-full overflow-hidden">
           <img
             src={user?.photoURL || "/random.png"}
             alt={user?.displayName || "User Avatar"}
