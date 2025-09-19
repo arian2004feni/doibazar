@@ -247,19 +247,36 @@ export default function CreateProductPage() {
             )}
           </div>
           <div>
-            <label className="label">
-              <span className="label-text">ক্যাটাগরি</span>
-            </label>
-            <input
-              {...register("category", { required: "ক্যাটাগরি অবশ্যই লাগবে" })}
-              placeholder="উদাহরণ: দই"
-              className="input input-bordered w-full"
-              disabled={loading}
-            />
-            {errors.category && (
-              <p className="text-red-500 mt-1">{errors.category.message}</p>
-            )}
-          </div>
+  <label className="label">
+    <span className="label-text">ক্যাটাগরি</span>
+  </label>
+
+  <input
+    list="categories"
+    {...register("category", { required: "ক্যাটাগরি অবশ্যই লাগবে" })}
+    placeholder="উদাহরণ: দই"
+    className="input input-bordered w-full"
+    disabled={loading}
+  />
+  <datalist id="categories">
+    {[
+      "দই",
+      "মিষ্টি",
+      "কেক",
+      "দুধজাত খাবার",
+      "পায়েস",
+      "দই কেক",
+      "ছানা",
+    ].map((cat, i) => (
+      <option key={i} value={cat} />
+    ))}
+  </datalist>
+
+  {errors.category && (
+    <p className="text-red-500 mt-1">{errors.category.message}</p>
+  )}
+</div>
+
         </div>
 
         {/* Images */}
