@@ -47,8 +47,8 @@ const Auth = () => {
 
   if (user) {
     return (
-      <div className="flex mt-4 md:m-0 justify-center items-center gap-2">
-        <Link to="dashboard/profile" className="w-11 border rounded-full overflow-hidden">
+      <div className="flex md:m-0 justify-center items-center gap-2">
+        <Link to="dashboard/profile" className="w-11 max-sm:w-9 border rounded-full overflow-hidden">
           <img
             src={user?.photoURL || "/random.png"}
             alt={user?.displayName || "User Avatar"}
@@ -61,7 +61,7 @@ const Auth = () => {
         </Link>
         <button
           onClick={handleLogOut}
-          className="btn bg-orange-500 hover:bg-orange-600"
+          className="btn h-9 text-[12px] bg-orange-500 hover:bg-orange-600"
         >
           Logout
         </button>
