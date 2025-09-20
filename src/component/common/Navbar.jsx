@@ -10,12 +10,18 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/">All Items</Link>
+        <Link to="/category/all">All Items</Link>
       </li>
-      {user?.gmail == "admin@doi.ghor" && (
+      {user?.email == "admin@doibazar.com" && (
         <>
           <li>
-            <Link>Create Items</Link>
+            <Link to="dashboard/admin/add-product">Add Product</Link>
+          </li>
+          <li>
+            <Link to="category/name/id">Product Details</Link>
+          </li>
+          <li>
+            <Link to="cart">My Cart</Link>
           </li>
         </>
       )}

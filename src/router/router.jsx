@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import Profile from "../component/Dashboard/Profile";
 import CreateProductPage from "../component/Dashboard/CreateProductPage";
+import CartPage from "../app/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "category/:category/:id",
         Component: ProductDetails,
       },
+      {
+        path: "cart",
+        Component: CartPage,
+      },
     ],
   },
   {
@@ -44,7 +49,7 @@ const router = createBrowserRouter([
         Component: Profile
       },
       {
-        path: "create-product",
+        path: "admin/add-product",
         Component: CreateProductPage,
       },
     ],

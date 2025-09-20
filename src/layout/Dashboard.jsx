@@ -58,7 +58,7 @@ const Dashboard = () => {
         <ul className="menu menu-lg gap-3 bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar Logo */}
           <div className="mb-3">
-            <Link to="/" className="text-3xl bangla">
+            <Link to="/" className="text-2xl bangla font-bold">
               দইবাজার
             </Link>
           </div>
