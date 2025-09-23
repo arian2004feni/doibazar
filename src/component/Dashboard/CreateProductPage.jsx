@@ -253,10 +253,10 @@ export default function CreateProductPage() {
 
   <input
     list="categories"
-    {...register("category", { required: "ক্যাটাগরি অবশ্যই লাগবে" })}
-    placeholder="উদাহরণ: দই"
+    {...register("category")}
+    placeholder="Coming Soon"
     className="input input-bordered w-full"
-    disabled={loading}
+    disabled={true}
   />
   <datalist id="categories">
     {[

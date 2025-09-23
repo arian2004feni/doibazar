@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/category/all">All Items</Link>
+        <Link to="/products">All Items</Link>
       </li>
       {user?.email == "admin@doibazar.com" && (
         <>
@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link to="dashboard/admin/add-product">Add Product</Link>
           </li>
           <li>
-            <Link to="category/name/id">Product Details</Link>
+            <Link to="product/product-id">Product Details</Link>
           </li>
           <li>
             <Link to="cart">My Cart</Link>

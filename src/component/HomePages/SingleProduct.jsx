@@ -8,11 +8,11 @@ const SingleProduct = ({ item }) => {
     <div className="w-full flex flex-col justify-between gap-4 bg-white shadow border border-black/10 rounded-xl p-4 hover:shadow-lg transition bangla group">
       {/* Details Column */}
       <div className="flex flex-col">
-        <p className="text-sm text-gray-500">
+        {category && <p className="text-sm text-gray-500">
           <Link to={`category/${category}`} className=" link-hover">{category}</Link>
-        </p>
+        </p>}
         <h2 className="text-lg font-semibold text-gray-800">
-          <Link to={`category/${category}/${_id}`} className="link-hover">
+          <Link to={`product/${_id}`} className="link-hover">
             {title}
           </Link>
         </h2>
@@ -32,7 +32,7 @@ const SingleProduct = ({ item }) => {
 
       {/* Image */}
       <Link
-        to={`category/${category}/${_id}`}
+        to={`product/${_id}`}
         className="w-10/12 flex justify-center flex-shrink-0 mx-auto"
       >
         <img
@@ -53,7 +53,7 @@ const SingleProduct = ({ item }) => {
 
         {/* Details Button */}
         <Link
-          to={`category/${category}/${_id}`}
+          to={`product/${_id}`}
           className="p-2 rounded-full size-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition"
         >
           <Info className="w-5 h-5 text-gray-600" />

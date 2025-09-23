@@ -6,7 +6,7 @@ const Products = () => {
   {
     "_id": "1",
     "image": "/item1.png",
-    "category": "দই",
+    "category": "",
     "inStock": true,
     "title": "মিষ্টি দই (ক্লে পট)",
     "price": "১৮০",
@@ -16,7 +16,7 @@ const Products = () => {
   {
     "_id": "2",
     "image": "/item2.png",
-    "category": "কেক",
+    "category": "",
     "inStock": true,
     "title": "চকলেট ফাজ কেক",
     "price": "৭৫০",
@@ -26,7 +26,7 @@ const Products = () => {
   {
     "_id": "3",
     "image": "/item3.png",
-    "category": "মিষ্টি",
+    "category": "",
     "inStock": false,
     "title": "রসগোল্লা (১২ পিস)",
     "price": "৩০০",
@@ -36,7 +36,7 @@ const Products = () => {
   {
     "_id": "4",
     "image": "/item4.png",
-    "category": "পেস্ট্রি",
+    "category": "",
     "inStock": false,
     "title": "ফ্রুট টার্ট",
     "price": "১৫০",
@@ -46,7 +46,7 @@ const Products = () => {
   {
     "_id": "5",
     "image": "/item5.png",
-    "category": "কুকিজ",
+    "category": "",
     "inStock": false,
     "title": "বাটার কুকিজ",
     "price": "২২০",
@@ -56,7 +56,7 @@ const Products = () => {
   {
     "_id": "6",
     "image": "/item6.png",
-    "category": "কেক",
+    "category": "",
     "inStock": true,
     "title": "ম্যাংগো চিজকেক",
     "price": "৫৫০",

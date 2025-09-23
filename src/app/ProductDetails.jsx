@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { toBanglaNumber } from "../component/utils";
 
 const ProductDetails = () => {
-  const {category, id } = useParams();
+  const { id } = useParams();
   const product = {
     _id: "p1",
     title: "দই মিষ্টি",
@@ -49,9 +49,6 @@ const ProductDetails = () => {
         <ul>
           <li>
             <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={`/category/${category}`}>{category}</Link>
           </li>
           <li>{id}</li>
         </ul>

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Home from "../app/Home";
 import RootLayout from "../layout/RootLayout";
 import ProductDetails from "../app/ProductDetails";
-import CategoryProducts from "../app/CategoryProducts";
+import AllProducts from "../app/AllProducts";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import Profile from "../component/Dashboard/Profile";
@@ -19,15 +19,11 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "category/:category",
-        element: (
-          <PrivateRoute>
-            <CategoryProducts />
-          </PrivateRoute>
-        ),
+        path: "products",
+        element: <AllProducts />,
       },
       {
-        path: "category/:category/:id",
+        path: "product/:id",
         Component: ProductDetails,
       },
       {
@@ -46,7 +42,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "profile",
-        Component: Profile
+        Component: Profile,
       },
       {
         path: "admin/add-product",

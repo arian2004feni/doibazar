@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, useParams } from 'react-router';
+import { Link } from 'react-router';
 
-const CategoryProducts = () => {
-  const {category} = useParams();
+const AllProducts = () => {
   return (
     <div>
       <div className="breadcrumbs text-sm">
@@ -10,11 +9,11 @@ const CategoryProducts = () => {
           <li>
             <Link to={'/'}>Home</Link>
           </li>
-          <li>{category}</li>
+          <li>All</li>
         </ul>
       </div>
     </div>
   );
 };
 
-export default CategoryProducts;
+export default AllProducts;
